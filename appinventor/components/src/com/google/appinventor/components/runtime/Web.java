@@ -241,6 +241,7 @@ public class Web extends AndroidNonvisibleComponent implements Component,
 
   // Set of observers
   private HashSet<DataSourceChangeListener> dataSourceObservers = new HashSet<>();
+  private String responseTextEncoding = "UTF-8";
 
   /**
    * Creates a new Web component.
@@ -284,6 +285,24 @@ public class Web extends AndroidNonvisibleComponent implements Component,
   @SimpleProperty
   public void Url(String url) {
     urlString = url;
+  }
+  /**
+   * Returns the Response Text Encoding.
+   */
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+      description = "The URL for the web request.")
+  public String ResponseTextEncoding() {
+    return responseTextEncoding;
+  }
+
+  /**
+   * Specifies the Response Text Encoding.
+   */
+  @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING,
+      defaultValue = "UTF-8")
+  @SimpleProperty
+  public void ResponseTextEncoding(String encoding) {
+    responseTextEncoding = encoding;
   }
 
   /**
@@ -1241,7 +1260,7 @@ public class Web extends AndroidNonvisibleComponent implements Component,
                 }
               });
           } else {
-            final String responseContent = getResponseContent(connection);
+            final String responseContent = getResponseContent(connection, responseTextEncoding);
 
             // Dispatch the event.
             activity.runOnUiThread(new Runnable() {
@@ -1431,9 +1450,8 @@ public class Web extends AndroidNonvisibleComponent implements Component,
     }
   }
 
-  private static String getResponseContent(HttpURLConnection connection) throws IOException {
+  private static String getResponseContent(HttpURLConnection connection,String encoding) throws IOException {
     // Use the content encoding to convert bytes to characters.
-    String encoding = connection.getContentEncoding();
     if (encoding == null) {
       encoding = "UTF-8";
     }

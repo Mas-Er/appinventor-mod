@@ -567,7 +567,9 @@ public class YaVersion {
   // - DATA_FILE_COMPONENT_VERSION was introduced
   // - BLUETOOTH_CLIENT_COMPONENT_VERSION was incremented to 7
 
-  public static final int YOUNG_ANDROID_VERSION = 219;
+  public static final int YOUNG_ANDROID_VERSION = 220;
+  // For YOUNG_ANDROID_VERSION 220:
+  // - WEB_COMPONENT_VERSION was incremented to 9
 
   // ............................... Blocks Language Version Number ...............................
 
@@ -1476,7 +1478,9 @@ public class YaVersion {
   // - The XMLTextDecodeAsDictionary method was added.
   // For WEB_COMPONENT_VERSION 8:
   // - PATCH methods added (PatchText, PatchTextWithEncoding, and PatchFile).
-  public static final int WEB_COMPONENT_VERSION = 8;
+  // For WEB_COMPONENT_VERSION 9:
+  // - Added property ResponseTextEncoding
+  public static final int WEB_COMPONENT_VERSION = 9;
 
   // For WEBVIEWER_COMPONENT_VERSION 2:
   // - The CanGoForward and CanGoBack methods were added
