@@ -286,6 +286,7 @@ public class Web extends AndroidNonvisibleComponent implements Component,
   public void Url(String url) {
     urlString = url;
   }
+
   /**
    * Returns the Response Text Encoding.
    */
@@ -1450,7 +1451,7 @@ public class Web extends AndroidNonvisibleComponent implements Component,
     }
   }
 
-  private static String getResponseContent(HttpURLConnection connection,String encoding) throws IOException {
+  private static String getResponseContent(HttpURLConnection connection, String encoding) throws IOException {
     // Use the content encoding to convert bytes to characters.
     if (encoding == null) {
       encoding = "UTF-8";

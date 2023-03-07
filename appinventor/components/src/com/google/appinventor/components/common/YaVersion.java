@@ -567,9 +567,9 @@ public class YaVersion {
   // - DATA_FILE_COMPONENT_VERSION was introduced
   // - BLUETOOTH_CLIENT_COMPONENT_VERSION was incremented to 7
 
-  public static final int YOUNG_ANDROID_VERSION = 220;
   // For YOUNG_ANDROID_VERSION 220:
   // - WEB_COMPONENT_VERSION was incremented to 9
+  public static final int YOUNG_ANDROID_VERSION = 220;
 
   // ............................... Blocks Language Version Number ...............................
 
