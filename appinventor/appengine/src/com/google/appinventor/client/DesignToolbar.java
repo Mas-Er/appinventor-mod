@@ -386,6 +386,10 @@ public class DesignToolbar extends Toolbar {
       }
       // Only do something if we aren't already doing it!
       if (!lockPublishButton) {
+        if (Ode.getInstance().getCurrentYoungAndroidProjectRootNode().hasExtensions()) {
+          ErrorReporter.reportError(MESSAGES.HasExtensionError());
+          return;
+        }
         lockPublishButton = true;
         Ode.getInstance().getProjectService().sendToGallery(currentProject.getProjectId(),
           new OdeAsyncCallback<RpcResult>(
