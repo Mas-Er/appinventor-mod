@@ -137,6 +137,7 @@
 		06E59EB11D92D16100C42804 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E59EB01D92D16100C42804 /* Button.swift */; };
 		06E59EB31D92D19600C42804 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E59EB21D92D19600C42804 /* Label.swift */; };
 		06E59EB51D93345E00C42804 /* ButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E59EB41D93345E00C42804 /* ButtonBase.swift */; };
+		06E624A629F698EC007DA752 /* TextToSpeechTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E624A529F698EC007DA752 /* TextToSpeechTests.swift */; };
 		06EAAC791DCE291500889C6D /* AccelerometerSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAAC781DCE291500889C6D /* AccelerometerSensor.swift */; };
 		06F15C0F24059B0100C783E3 /* TextBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F15C0E24059B0100C783E3 /* TextBoxTests.swift */; };
 		06F91464252CE50B00AF8F88 /* BundledApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F91463252CE50B00AF8F88 /* BundledApp.swift */; };
@@ -157,6 +158,7 @@
 		088CAFD020DABB2E002B1B67 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088CAFCF20DABB2E002B1B67 /* Ball.swift */; };
 		08AB5804201AF2BA00F38C88 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB5803201AF2BA00F38C88 /* Canvas.swift */; };
 		0AE0AA8744D14E11695CF2E0 /* Pods_AIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4FA20345A0AEA4E0CB60F2 /* Pods_AIComponentKit.framework */; };
+		151EB7E2298853E400315044 /* AccessibleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EB7E1298853E400315044 /* AccessibleComponent.swift */; };
 		22843757284F89DF00EC3133 /* AssetFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22843756284F89DF00EC3133 /* AssetFetcher.swift */; };
 		46E77D8E29DD6894002CCDFB /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E77D8D29DD6894002CCDFB /* ShowAlert.swift */; };
 		5132E481C0B949ECDE06AE78 /* Pods_AIComponentKit_AIComponentKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD2633D7266389EB43FF45F /* Pods_AIComponentKit_AIComponentKitTests.framework */; };
@@ -368,6 +370,7 @@
 		06E59EB01D92D16100C42804 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		06E59EB21D92D19600C42804 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		06E59EB41D93345E00C42804 /* ButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBase.swift; sourceTree = "<group>"; };
+		06E624A529F698EC007DA752 /* TextToSpeechTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechTests.swift; sourceTree = "<group>"; };
 		06EAAC781DCE291500889C6D /* AccelerometerSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerSensor.swift; sourceTree = "<group>"; };
 		06EC0A1D1D959CD4001CD8DC /* BarcodeScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
 		06F15C0E24059B0100C783E3 /* TextBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxTests.swift; sourceTree = "<group>"; };
@@ -388,6 +391,7 @@
 		08815DB6210B532800FA89F7 /* Ev3Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ev3Commands.swift; sourceTree = "<group>"; };
 		088CAFCF20DABB2E002B1B67 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		08AB5803201AF2BA00F38C88 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		151EB7E1298853E400315044 /* AccessibleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibleComponent.swift; sourceTree = "<group>"; };
 		22843756284F89DF00EC3133 /* AssetFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetFetcher.swift; sourceTree = "<group>"; };
 		32349630B8B4D40D05FB295A /* Pods-AIComponentKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIComponentKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AIComponentKitTests/Pods-AIComponentKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		46E77D8D29DD6894002CCDFB /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
@@ -820,6 +824,7 @@
 		06E59EAD1D92C92300C42804 /* interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				151EB7E1298853E400315044 /* AccessibleComponent.swift */,
 				0618A2701D8CE50A0013A191 /* Component.swift */,
 				0618A2761D8CE9C20013A191 /* ComponentConstants.swift */,
 				0618A2741D8CE81B0013A191 /* ComponentContainer.swift */,
@@ -928,6 +933,7 @@
 			children = (
 				CB8539242075549A009E9030 /* ClockTests.swift */,
 				CBC78693202E0B6E005363A3 /* FileTests.swift */,
+				06E624A529F698EC007DA752 /* TextToSpeechTests.swift */,
 				0623BBEF2476291D00FEB2B6 /* TinyDBTests.swift */,
 				DE68A88C20B4971400233AF9 /* XMLTests.swift */,
 				0681C4B226024E6800F70BC6 /* WebTests.swift */,
@@ -1312,6 +1318,7 @@
 				041758532009417D007D2C31 /* String+ChopAffix.swift in Sources */,
 				0650F5181F1F1B7A00D4E6FA /* HMAC.swift in Sources */,
 				CBC787022032272E005363A3 /* String+Replace.swift in Sources */,
+				151EB7E2298853E400315044 /* AccessibleComponent.swift in Sources */,
 				062832981DBE95A7009605D5 /* Layout.swift in Sources */,
 				46E77D8E29DD6894002CCDFB /* ShowAlert.swift in Sources */,
 				06D1519C1DC4736900FC981E /* NSString_SHA1.m in Sources */,
@@ -1388,6 +1395,7 @@
 				06A623862507BDA800961743 /* CoercionTests.swift in Sources */,
 				0602B270203481F900ED60A8 /* FormTests.swift in Sources */,
 				06009FF62280723F00E4EC4A /* ImageTests.swift in Sources */,
+				06E624A629F698EC007DA752 /* TextToSpeechTests.swift in Sources */,
 				DE68A88D20B4971400233AF9 /* XMLTests.swift in Sources */,
 				0653CBDA1F971BA70052065A /* TestFailure.swift in Sources */,
 				064F224927342A3300CFA04B /* MapTests.swift in Sources */,
