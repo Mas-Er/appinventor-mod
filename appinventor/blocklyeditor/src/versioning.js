@@ -2748,6 +2748,7 @@ Blockly.Versioning.AllUpgradeMaps =
     5: "noUpgrade",
 
     // TextChanged event was added (via TextBoxBase)
+    // Text Watcher events were added
     6: "noUpgrade"
 
   }, // End PasswordTextBox upgraders
@@ -3117,10 +3118,11 @@ Blockly.Versioning.AllUpgradeMaps =
     // AI2: Added RequestFocus method
     5: "noUpgrade",
 
-    // AI2: Added ReadOnly property
+    // TextChanged event was added (via TextBoxBase)
+    // AI3: Added ReadOnly property
     6: "noUpgrade",
 
-    // TextChanged event was added (via TextBoxBase)
+    // Text Watcher events were added
     7: "noUpgrade"
 
   }, // End TextBox upgraders

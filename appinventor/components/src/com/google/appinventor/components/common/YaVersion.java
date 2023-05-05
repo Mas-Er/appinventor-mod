@@ -1256,6 +1256,7 @@ public class YaVersion {
   // - Added NumbersOnly property
   // For For PASSWORDTEXTBOX_COMPONENT_VERSION 6:
   // - TextChanged event was added (via TextBoxBase)
+  // - Text Watcher events were added
   public static final int PASSWORDTEXTBOX_COMPONENT_VERSION = 6;
 
   // For PEDOMETER_COMPONENT_VERSION 2:
@@ -1384,6 +1385,7 @@ public class YaVersion {
   // - ReadOnly property was added
   // For TEXTBOX_COMPONENT_VERSION 7:
   // - TextChanged event was added (via TextBoxBase)
+  // - Text Watcher events are added
   public static final int TEXTBOX_COMPONENT_VERSION = 7;
 
   // For TEXTING_COMPONENT_VERSION 2:

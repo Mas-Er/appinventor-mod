@@ -1469,6 +1469,7 @@ public final class YoungAndroidFormUpgrader {
     }
     if (srcCompVersion < 6) {
       // TextChanged event was added (via TextBoxBase)
+      // Text Watcher events were added
       srcCompVersion = 6;
     }
     return srcCompVersion;
@@ -1825,6 +1826,7 @@ public final class YoungAndroidFormUpgrader {
     }
     if (srcCompVersion < 7) {
       // TextChanged event was added (via TextBoxBase)
+      // Text Watcher events were added
       srcCompVersion = 7;
     }
     return srcCompVersion;
