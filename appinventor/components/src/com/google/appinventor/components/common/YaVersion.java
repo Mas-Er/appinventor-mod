@@ -569,6 +569,9 @@ public class YaVersion {
   // For YOUNG_ANDROID_VERSION 220:
   // - CHART_COMPONENT_VERSION was incremented to 2
   // - SPREADSHEET_COMPONENT_VERSION was incremented to 2
+  // - TEXTBOX_COMPONENT_VERSION was incremented to 7
+  // - PASSWORDTEXTBOX_COMPONENT_VERSION was incremented to 6
+  // - EMAILPICKER_COMPONENT_VERSION was incremented to 4
   // For YOUNG_ANDROID_VERSION 221:
   // - BLUETOOTHCLIENT_COMPONENT_VERSION was incremented to 8
   // For YOUNG_ANDROID_VERSION 223:
@@ -910,7 +913,9 @@ public class YaVersion {
   // - The Alignment property was renamed to TextAlignment.
   // For EMAILPICKER_COMPONENT_VERSION 3:
   // - RequestFocus function was added (via TextBoxBase)
-  public static final int EMAILPICKER_COMPONENT_VERSION = 3;
+  // For EMAILPICKER_COMPONENT_VERSION 4:
+  // - TextChanged event was added (via TextBoxBase)
+  public static final int EMAILPICKER_COMPONENT_VERSION = 4;
 
   // For FEATURE_COLLECTION_COMPONENT_VERSION 1:
   // - Initial FeatureCollection implementation for Maps
@@ -1243,7 +1248,9 @@ public class YaVersion {
   // - Added PasswordVisible property
   // For For PASSWORDTEXTBOX_COMPONENT_VERSION 5:
   // - Added NumbersOnly property
-  public static final int PASSWORDTEXTBOX_COMPONENT_VERSION = 5;
+  // For For PASSWORDTEXTBOX_COMPONENT_VERSION 6:
+  // - TextChanged event was added (via TextBoxBase)
+  public static final int PASSWORDTEXTBOX_COMPONENT_VERSION = 6;
 
   // For PEDOMETER_COMPONENT_VERSION 2:
   // - The step sensing algorithm was updated to be more accurate.
@@ -1363,7 +1370,9 @@ public class YaVersion {
   // - RequestFocus method was added
   // For TEXTBOX_COMPONENT_VERSION 6:
   // - ReadOnly property was added
-  public static final int TEXTBOX_COMPONENT_VERSION = 6;
+  // For TEXTBOX_COMPONENT_VERSION 7:
+  // - TextChanged event was added (via TextBoxBase)
+  public static final int TEXTBOX_COMPONENT_VERSION = 7;
 
   // For TEXTING_COMPONENT_VERSION 2:
   // Texting over Wifi was implemented using Google Voice
