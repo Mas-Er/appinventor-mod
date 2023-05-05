@@ -569,12 +569,15 @@ public class YaVersion {
   // For YOUNG_ANDROID_VERSION 220:
   // - CHART_COMPONENT_VERSION was incremented to 2
   // - SPREADSHEET_COMPONENT_VERSION was incremented to 2
-  // For YOUNG_ANDROID_VERSION 221;
+  // For YOUNG_ANDROID_VERSION 221:
   // - BLUETOOTHCLIENT_COMPONENT_VERSION was incremented to 8
-  // For YOUNG_ANDROID_VERSION 222:
+  // For YOUNG_ANDROID_VERSION 223:
+  // - SOUND_RECORDER_COMPONENT_VERSION was incremented to 3
+  // For YOUNG_ANDROID_VERSION 224:
   // - NEARFIELD_COMPONENT_VERSION was incremented to 2
+  // - CHATBOT_COMPONENT_VERSION was introduce
 
-  public static final int YOUNG_ANDROID_VERSION = 222;
+  public static final int YOUNG_ANDROID_VERSION = 224;
 
   // ............................... Blocks Language Version Number ...............................
 
@@ -806,7 +809,9 @@ public class YaVersion {
   // - The UseFront property was added.
   // For CAMERA_COMPONENT_VERSION 3:
   // - The UseFront property was removed :-( .
-   public static final int CAMERA_COMPONENT_VERSION = 3;
+  // For CAMERA_COMPONENT_VERSION 4:
+  // - ToggleLight, HasFlash methods were added.
+   public static final int CAMERA_COMPONENT_VERSION = 4;
 
   // For CANVAS_COMPONENT_VERSION 2:
   // - The LineWidth property was added.
@@ -1314,7 +1319,10 @@ public class YaVersion {
 
   // For SOUND_RECORDER_COMPONENT_VERSION 2:
   // - The SavedRecording property was added.
-  public static final int SOUND_RECORDER_COMPONENT_VERSION = 2;
+  // For SOUND_RECORDER_COMPONENT_VERSION 3:
+  // - Added Pause and Resume methods.
+  // - Added PausedRecording and ResumedRecording events.
+  public static final int SOUND_RECORDER_COMPONENT_VERSION = 3;
 
   // For SPEECHRECOGNIZER_COMPONENT_VERSION 2:
   // - The UseLegacy property was added which is set to True by default.
@@ -1413,7 +1421,10 @@ public class YaVersion {
   //   with the FirstRemoved event were added
   // For FIREBASE_COMPONENT_VERSION 3:
   // - Added the ClearTag function, GetTagList and Persist
-  public static final int FIREBASE_COMPONENT_VERSION = 3;
+  // For FIREBASE_COMPONENT_VERSION 4:
+  // - Added the GoOnline and GoOffline functions
+  // - Made the FirebaseURL property user visible
+  public static final int FIREBASE_COMPONENT_VERSION = 4;
 
   // For CLOUDDB_COMPONENT_VERSION 1:
   // - CloudDB component introduced
@@ -1548,6 +1559,9 @@ public class YaVersion {
 
   //For TRANSLATE_COMPONENT_VERSION: Initial Version
   public static final int TRANSLATOR_COMPONENT_VERSION = 1;
+
+  //For CHATBOT_COMPONENT_VERSION: Initial Version
+  public static final int CHATBOT_COMPONENT_VERSION = 1;
 
   // Rendezvous Server Location
   public static final String RENDEZVOUS_SERVER = "rendezvous.appinventor.mit.edu";

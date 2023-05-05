@@ -8,7 +8,55 @@ title: Experimental
 
 Table of Contents:
 
+* [ChatBot](#ChatBot)
 * [FirebaseDB](#FirebaseDB)
+
+## ChatBot  {#ChatBot}
+
+The ChatBot component is a non-visible component for chatting with an AI
+ chatbot. This version uses a proxy run by MIT that in turn uses the ChatGPT
+ generative large language model.
+
+
+
+### Properties  {#ChatBot-Properties}
+
+{:.properties}
+
+{:id="ChatBot.ApiKey" .text .ro .bo} *ApiKey*
+: Property for ApiKey
+
+{:id="ChatBot.Apikey" .text .wo .bo} *Apikey*
+: An ApiKey for ChatGPT. User supplied. If provided, we will use it instead of the
+ API key embedded in the chat proxy service.
+
+ Note: We do not provide this as a DesignerProperty, it should be stored using the
+ blocks, preferably using the Obfuscated Text block to provide some protection
+ (not perfect protection) of the key embedded in a packaged app.
+
+{:id="ChatBot.System" .text} *System*
+: The "System" value given to ChatGPT. It is used to set the tone of a conversation. For example: "You are a funny person."
+
+{:id="ChatBot.Token" .text .wo} *Token*
+: The MIT Access token to use. MIT App Inventor will automatically fill this
+ value in. You should not need to change it.
+
+### Events  {#ChatBot-Events}
+
+{:.events}
+
+{:id="ChatBot.GotResponse"} GotResponse(*responseCode*{:.text},*responseText*{:.text})
+: Event indicating that a request has finished and has returned data (output from ChatBot).
+
+### Methods  {#ChatBot-Methods}
+
+{:.methods}
+
+{:id="ChatBot.Converse" class="method"} <i/> Converse(*question*{:.text})
+: Ask a question of the Chat Bot. Successive calls will remember information from earlier in the conversation. Use the "ResetConversation" function to reset for a new conversation.
+
+{:id="ChatBot.ResetConversation" class="method"} <i/> ResetConversation()
+: Reset the current conversation, Chat bot will forget any previous conversation when resonding in the future.
 
 ## FirebaseDB  {#FirebaseDB}
 

@@ -445,7 +445,11 @@ public final class Canvas extends AndroidViewComponent implements ComponentConta
         int height = getHeight();
         cache = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         android.graphics.Canvas c = new android.graphics.Canvas(cache);
-        layout(0, 0, width, height);
+        /**
+         * layout function call was creating Issue #2673
+         * removing layout call resolved the Issue
+         */
+        //layout(0, 0, width, height);
         draw(c);
       }
       return cache;
@@ -1326,7 +1330,7 @@ public final class Canvas extends AndroidViewComponent implements ComponentConta
    * When a fling gesture (quick swipe) is made on the canvas: provides
    * the (x,y) position of the start of the fling, relative to the upper
    * left of the canvas. Also provides the speed (pixels per millisecond) and heading
-   * (0-360 degrees) of the fling, as well as the x velocity and y velocity
+   * (-180 to 180 degrees) of the fling, as well as the x velocity and y velocity
    * components of the fling's vector. The value "flungSprite" is true if a sprite
    * was located near the the starting point of the fling gesture.
    *

@@ -1544,6 +1544,10 @@ public final class YoungAndroidFormUpgrader {
       // No properties need to be modified to upgrade to version 2.
       srcCompVersion = 2;
     }
+    if (srcCompVersion < 3) {
+      // Pause and Resume methods (and respective events) are now available.
+      srcCompVersion = 3;
+    }
     return srcCompVersion;
   }
 
@@ -1596,6 +1600,11 @@ public final class YoungAndroidFormUpgrader {
     if (srcCompVersion < 2) {
       // Added Property: Namespace
       srcCompVersion = 2;
+    }
+
+    if (srcCompVersion < 3) {
+      // Added Property: GetEntries
+      srcCompVersion = 3;
     }
     return srcCompVersion;
   }
