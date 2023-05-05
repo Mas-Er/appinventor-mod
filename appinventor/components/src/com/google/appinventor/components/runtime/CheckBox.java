@@ -86,7 +86,7 @@ public final class CheckBox extends ToggleBase<android.widget.CheckBox> {
    */
   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_COLOR,
       defaultValue = Component.DEFAULT_VALUE_COLOR_GRAY)
-  @SimpleProperty
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR)
   public void UnCheckedColor(int unCheckedColor)  {
     this.unCheckedColor = unCheckedColor;
     setColorStateList(this.unCheckedColor, this.checkedColor);
@@ -109,7 +109,7 @@ public final class CheckBox extends ToggleBase<android.widget.CheckBox> {
    */
   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_COLOR,
           defaultValue = Component.DEFAULT_VALUE_COLOR_PINK)
-  @SimpleProperty
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR)
   public void CheckedColor(int checkedColor)  {
     this.checkedColor = checkedColor;
     setColorStateList(this.unCheckedColor, this.checkedColor);

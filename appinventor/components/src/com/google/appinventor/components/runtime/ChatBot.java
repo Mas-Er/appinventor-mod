@@ -369,7 +369,8 @@ public final class ChatBot extends AndroidNonvisibleComponent {
 
   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING,
       defaultValue = "")
-  @SimpleProperty(description = "The MIT Access token to use. MIT App Inventor will automatically fill this " +
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          description = "The MIT Access token to use. MIT App Inventor will automatically fill this " +
     "value in. You should not need to change it.",
     userVisible = true)
   public void Token(String token) {

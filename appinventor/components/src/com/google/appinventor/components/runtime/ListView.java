@@ -956,7 +956,8 @@ public final class ListView extends AndroidViewComponent implements AdapterView.
    * @param hasSeparator boolean value to determine the ListView has separator or not
    */
   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_BOOLEAN, defaultValue = "False")
-  @SimpleProperty(userVisible = false)
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          userVisible = false)
   public void HasSeparator(boolean hasSeparator)  {
     this.hasSeparator = hasSeparator;
     setSeparator();
@@ -967,7 +968,8 @@ public final class ListView extends AndroidViewComponent implements AdapterView.
    *
    * @return the boolean value represent the ListView has separator or not
    */
-  @SimpleProperty(userVisible = false)
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          userVisible = false)
   public boolean HasSeparator() {
     return this.hasSeparator;
   }
@@ -978,7 +980,8 @@ public final class ListView extends AndroidViewComponent implements AdapterView.
    * @param separatorColor the int value of line separator color
    */
   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_COLOR, defaultValue = Component.DEFAULT_VALUE_COLOR_PINK)
-  @SimpleProperty(userVisible = false)
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          userVisible = false)
   public void SeparatorColor(int separatorColor)  {
     this.separatorColor = separatorColor;
     setSeparator();
@@ -989,7 +992,8 @@ public final class ListView extends AndroidViewComponent implements AdapterView.
    *
    * @return the int value of line separator color
    */
-  @SimpleProperty(userVisible = false)
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          userVisible = false)
   public int SeparatorColor() {
     return this.separatorColor;
   }
@@ -1001,7 +1005,8 @@ public final class ListView extends AndroidViewComponent implements AdapterView.
    * @param separatorSize the int value of line separator size
    */
   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER, defaultValue = "1")
-  @SimpleProperty(userVisible = false)
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          userVisible = false)
   public void SeparatorSize(int separatorSize)  {
     this.separatorSize = separatorSize;
     setSeparator();
@@ -1013,7 +1018,8 @@ public final class ListView extends AndroidViewComponent implements AdapterView.
    *
    * @return the int value of line separator size
    */
-  @SimpleProperty(userVisible = false)
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          userVisible = false)
   public int SeparatorSize()  {
     return this.separatorSize;
   }

@@ -83,8 +83,14 @@ None
 
 {:.methods}
 
+{:id="Camera.HasFlash" class="method returns boolean"} <i/> HasFlash()
+: Returns true if your device has a flash.
+
 {:id="Camera.TakePicture" class="method"} <i/> TakePicture()
 : Takes a picture, then raises the [`AfterPicture`](#Camera.AfterPicture) event.
+
+{:id="Camera.ToggleLight" class="method"} <i/> ToggleLight()
+: Toggle the flash of your device to on or off.
 
 ## ImagePicker  {#ImagePicker}
 
@@ -236,10 +242,16 @@ Multimedia component that plays audio and controls phone vibration. The name of 
  (default option), the `Player` continues playing whenever the current screen is displaying or
  not.
 
+{:id="Player.PlaybackSpeed" .number} *PlaybackSpeed*
+: Returns the playback speed of the `Player` component.
+ playback speed is only supported for API level >= 23, for lower version of android and
+ if playback speed is not set in that case it returns 1.0(Normal Speed) and raised PlayerError event
+ with exception message.
+
 {:id="Player.Source" .text} *Source*
 : Sets the audio source.
 
-{:id="Player.Volume" .number .wo} *Volume*
+{:id="Player.Volume" .number} *Volume*
 : Sets the volume property to a number between 0 and 100.
 
 ### Events  {#Player-Events}
@@ -348,6 +360,12 @@ None
 {:id="SoundRecorder.AfterSoundRecorded"} AfterSoundRecorded(*sound*{:.text})
 : Provides the location of the newly created sound.
 
+{:id="SoundRecorder.PausedRecording"} PausedRecording()
+: Indicates that the recording has been paused, and can be resumed.
+
+{:id="SoundRecorder.ResumedRecording"} ResumedRecording()
+: Indicates that the recording has been resumed.
+
 {:id="SoundRecorder.StartedRecording"} StartedRecording()
 : Indicates that the recorder has started, and can be stopped.
 
@@ -357,6 +375,12 @@ None
 ### Methods  {#SoundRecorder-Methods}
 
 {:.methods}
+
+{:id="SoundRecorder.Pause" class="method"} <i/> Pause()
+: Pauses recording.
+
+{:id="SoundRecorder.Resume" class="method"} <i/> Resume()
+: Resumes recording.
 
 {:id="SoundRecorder.Start" class="method"} <i/> Start()
 : Starts recording.

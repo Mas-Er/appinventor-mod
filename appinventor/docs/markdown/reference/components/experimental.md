@@ -80,7 +80,7 @@ The Firebase component communicates with a Web service to store
 {:id="FirebaseDB.FirebaseToken" .text .do} *FirebaseToken*
 : Getter for the FirebaseToken.
 
-{:id="FirebaseDB.FirebaseURL" .text .do} *FirebaseURL*
+{:id="FirebaseDB.FirebaseURL" .text} *FirebaseURL*
 : Specifies the URL for the Firebase.
 
  The default value is currently my private Firebase URL, but this will
@@ -129,6 +129,12 @@ The Firebase component communicates with a Web service to store
 : GetValue asks Firebase to get the value stored under the given tag.
  It will pass valueIfTagNotThere to GotValue if there is no value stored
  under the tag.
+
+{:id="FirebaseDB.GoOffline" class="method"} <i/> GoOffline()
+: Take the database offline. This effectively disables realtime updates.
+
+{:id="FirebaseDB.GoOnline" class="method"} <i/> GoOnline()
+: Take the database online.
 
 {:id="FirebaseDB.RemoveFirst" class="method"} <i/> RemoveFirst(*tag*{:.text})
 : Return the first element of a list and atomically remove it. If two devices use this function simultaneously, one will get the first element and the the other will get the second element, or an error if there is no available element. When the element is available, the "FirstRemoved" event will be triggered.

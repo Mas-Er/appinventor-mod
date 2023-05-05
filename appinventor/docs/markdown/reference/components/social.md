@@ -256,6 +256,14 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 {:.events}
 
+{:id="EmailPicker.AfterTextChanged"} AfterTextChanged()
+: The same as OnTextChanged, except now the text box is editable.
+ This event is used when you need to see and possibly edit new text.
+
+{:id="EmailPicker.BeforeTextChanged"} BeforeTextChanged(*oldText*{:.text},*start*{:.number},*count*{:.number},*after*{:.number})
+: This means that the characters are about to be replaced with some new text. The text is uneditable.
+ This event is used when you need to take a look at the old text which is about to change.
+
 {:id="EmailPicker.GotFocus"} GotFocus()
 : Event raised when the `EmailPicker` is selected for input, such as by
  the user touching it.
@@ -263,6 +271,10 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 {:id="EmailPicker.LostFocus"} LostFocus()
 : Event raised when the `EmailPicker` is no longer selected for input, such
  as if the user touches a different text box.
+
+{:id="EmailPicker.OnTextChanged"} OnTextChanged(*newText*{:.text},*start*{:.number},*before*{:.number},*count*{:.number})
+: Changes have been made, some characters have just been replaced. The text is uneditable.
+ This event is used when you need to see which characters in the text are new.
 
 {:id="EmailPicker.TextChanged"} TextChanged()
 : Event raised when the text of the `EmailPicker` is changed.

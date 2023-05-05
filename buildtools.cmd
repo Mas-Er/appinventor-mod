@@ -105,7 +105,7 @@ goto menu
 :localserver
 title Running Local Server...
 cls
-start java_dev_appserver --address=0.0.0.0 --port=8888 appengine/build/war/
+start dev_appserver --address=0.0.0.0 --port=8888 appengine/build/war/
 :: wait for 10 seconds for app engine server to start
 timeout 10
 start http://localhost:8888

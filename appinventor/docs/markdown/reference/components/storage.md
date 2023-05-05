@@ -11,6 +11,7 @@ Table of Contents:
 * [CloudDB](#CloudDB)
 * [DataFile](#DataFile)
 * [File](#File)
+* [SAF](#SAF)
 * [Spreadsheet](#Spreadsheet)
 * [TinyDB](#TinyDB)
 * [TinyWebDB](#TinyWebDB)
@@ -293,6 +294,172 @@ Non-visible component for storing and retrieving files. Use this component to wr
    Note that this block will overwrite a file if it already exists. If you want to add content
  to an existing file use the [`AppendToFile`](#File.AppendToFile) method.
 
+## SAF  {#SAF}
+
+Non-visible component to access files using Storage Access Framework.
+ Since it is getting difficult with newer Android versions to read and write files using java.io.File() so why not use the
+ not-so popular quite old method (completely) introduced in API 21 (Lollipop) named `Storage Access Framework` to escape
+ from the chaos increasing with time and newer Android versions.
+ Usually, `Application Specific Directory` and app's Private Dir is enough for normal apps which don't have to do much things
+ with files but with SAF we have following benefits -
+ - access phone storage
+ - access SD card
+ - read from/write to files created by other apps
+ - help user in protecting his/her data and restrict Storage consumed by apps
+ - get access to files and folders which are important to your app.
+ In this way, you needn't ask for MANAGE_EXTERNAL_STORAGE permission.
+ - work with non-media files too, such as creating a CSV file of user's data or rendering a PDF file
+
+
+
+### Properties  {#SAF-Properties}
+
+{:.properties}
+
+{:id="SAF.DocumentDirMimeType" .text .ro .bo} *DocumentDirMimeType*
+: Returns mime type of document dir.
+
+{:id="SAF.FlagGrantReadPermission" .number .ro .bo} *FlagGrantReadPermission*
+: Flag to get write permission.
+
+{:id="SAF.FlagGrantWritePermission" .number .ro .bo} *FlagGrantWritePermission*
+: Flag to get read permission.
+
+### Events  {#SAF-Events}
+
+{:.events}
+
+{:id="SAF.DocumentCreated"} DocumentCreated(*uriString*{:.text})
+: Event invoked after `CreateDocument` method
+
+{:id="SAF.ErrorOccurred"} ErrorOccurred(*methodName*{:.text},*errorMessage*{:.text})
+: Event indicating an error or exception has occurred
+
+{:id="SAF.GotCopyResult"} GotCopyResult(*successful*{:.boolean},*response*{:.text})
+: Event invoked after getting copy operation's result
+
+{:id="SAF.GotDocumentsList"} GotDocumentsList(*documentsList*{:.list})
+: Event invoked after getting files list
+
+{:id="SAF.GotMoveResult"} GotMoveResult(*successful*{:.boolean},*response*{:.text})
+: Event invoked after getting move operation's result
+
+{:id="SAF.GotReadResult"} GotReadResult(*result*{:.any})
+: Event invoked after reading from document
+
+{:id="SAF.GotUri"} GotUri(*uri*{:.any},*uriString*{:.text})
+: Event invoked when user selects a document or tree from SAF file picker
+
+{:id="SAF.GotWriteResult"} GotWriteResult(*response*{:.text})
+: Event invoked after writing document (`WriteText` and `WriteBytes` both methods trigger this event)
+
+### Methods  {#SAF-Methods}
+
+{:.methods}
+
+{:id="SAF.BuildChildDocumentsUriUsingTree" class="method returns text"} <i/> BuildChildDocumentsUriUsingTree(*treeUri*{:.text},*parentDocumentId*{:.text})
+: Build URI representing the children of the target directory in a document provider
+
+{:id="SAF.BuildDocumentUriUsingTree" class="method returns text"} <i/> BuildDocumentUriUsingTree(*treeUri*{:.text},*documentId*{:.text})
+: Build URI representing access to descendant documents of the given tree uri's document id
+
+{:id="SAF.CopyDocument" class="method"} <i/> CopyDocument(*sourceUri*{:.text},*targetParentUri*{:.text})
+: Tries to copy document from source uri to target dir
+
+{:id="SAF.CreateDocument" class="method"} <i/> CreateDocument(*parentDocumentUri*{:.text},*fileName*{:.text},*mimeType*{:.text})
+: Creates a new and empty document.If document already exists then an incremental value will be automatically suffixed
+
+{:id="SAF.CreateFlag" class="method returns number"} <i/> CreateFlag(*f1*{:.number},*f2*{:.number})
+: Returns resulting flag created from given two flags
+
+{:id="SAF.CreateUri" class="method returns any"} <i/> CreateUri(*uriString*{:.text})
+: Parses uriString to create URI
+
+{:id="SAF.DeleteDocument" class="method returns boolean"} <i/> DeleteDocument(*documentUri*{:.text})
+: Tries to delete document and returns delete operation's result
+
+{:id="SAF.DisplayName" class="method returns text"} <i/> DisplayName(*uriString*{:.text})
+: Returns display name of given document
+
+{:id="SAF.GetDocumentId" class="method returns text"} <i/> GetDocumentId(*uriString*{:.text})
+: Returns document id of an uri
+
+{:id="SAF.GetTreeDocumentId" class="method returns text"} <i/> GetTreeDocumentId(*uriString*{:.text})
+: Returns document id of tree uri
+
+{:id="SAF.IsChildDocumentUri" class="method returns boolean"} <i/> IsChildDocumentUri(*parentUri*{:.text},*childUri*{:.text})
+: Returns whether provided second uri is child document/dir of first uri or not
+
+{:id="SAF.IsCopySupported" class="method returns boolean"} <i/> IsCopySupported(*uriString*{:.text})
+: Returns whether document can be copied or not
+
+{:id="SAF.IsDeleteSupported" class="method returns boolean"} <i/> IsDeleteSupported(*uriString*{:.text})
+: Returns whether document is deletable or not
+
+{:id="SAF.IsDocumentUri" class="method returns boolean"} <i/> IsDocumentUri(*uriString*{:.text})
+: Returns whether provided uri is of a document or not
+
+{:id="SAF.IsMoveSupported" class="method returns boolean"} <i/> IsMoveSupported(*uriString*{:.text})
+: Returns whether document is movable or not
+
+{:id="SAF.IsReadGranted" class="method returns boolean"} <i/> IsReadGranted(*uri*{:.text})
+: Checks whether read is granted for given uri
+
+{:id="SAF.IsRenameSupported" class="method returns boolean"} <i/> IsRenameSupported(*uriString*{:.text})
+: Returns whether document supports renaming
+
+{:id="SAF.IsTreeUri" class="method returns boolean"} <i/> IsTreeUri(*uriString*{:.text})
+: Returns whether provided uri is a tree uri or not
+
+{:id="SAF.IsWriteGranted" class="method returns boolean"} <i/> IsWriteGranted(*uri*{:.text})
+: Checks whether write is granted for given uri
+
+{:id="SAF.LastModifiedTime" class="method returns text"} <i/> LastModifiedTime(*uriString*{:.text})
+: Returns last modified time/epoch timestamp of given document uri
+
+{:id="SAF.ListDocuments" class="method"} <i/> ListDocuments(*dirUri*{:.text},*dirDocumentId*{:.text})
+: Tries to list documents from given document dir
+
+{:id="SAF.MimeType" class="method returns text"} <i/> MimeType(*uriString*{:.text})
+: Returns mime type of given document uri
+
+{:id="SAF.MoveDocument" class="method"} <i/> MoveDocument(*sourceUri*{:.text},*sourceParentUri*{:.text},*targetParentUri*{:.text})
+: Tries to move document from source uri to target dir
+
+{:id="SAF.NormalizeUri" class="method returns text"} <i/> NormalizeUri(*uri*{:.any})
+: Returns text representation of URI
+
+{:id="SAF.OpenDocumentTree" class="method"} <i/> OpenDocumentTree(*title*{:.text},*initialDir*{:.text})
+: Prompts user to select a dir (document tree) which can be accessed later along with its children
+
+{:id="SAF.OpenSingleDocument" class="method"} <i/> OpenSingleDocument(*title*{:.text},*type*{:.text},*extraMimeTypes*{:.list})
+: Prompts user to select a single document
+
+{:id="SAF.ReadBytes" class="method"} <i/> ReadBytes(*documentUri*{:.text})
+: Reads content of document as bytes
+
+{:id="SAF.ReadText" class="method"} <i/> ReadText(*documentUri*{:.text})
+: Reads from given document as text
+
+{:id="SAF.ReleasePermission" class="method"} <i/> ReleasePermission(*uri*{:.text},*flags*{:.number})
+: Relinquish a persisted URI permission granted previously
+
+{:id="SAF.RenameDocument" class="method returns text"} <i/> RenameDocument(*documentUri*{:.text},*displayName*{:.text})
+: Tries to rename a document and returns updated uri
+
+{:id="SAF.Size" class="method returns text"} <i/> Size(*uriString*{:.text})
+: Returns size (in bytes) of given document uri
+
+{:id="SAF.TakePersistableUriPermission" class="method"} <i/> TakePersistableUriPermission(*uri*{:.any},*modeFlag*{:.number})
+: Requests Document Providers to grant persistable URI permission to the uri so that application can access it whenever needed as
+ long as file exists or permission is not invoked
+
+{:id="SAF.WriteBytes" class="method"} <i/> WriteBytes(*documentUri*{:.text},*bytes*{:.any})
+: Writes bytes to given document
+
+{:id="SAF.WriteText" class="method"} <i/> WriteText(*documentUri*{:.text},*text*{:.text})
+: Writes text to given document
+
 ## Spreadsheet  {#Spreadsheet}
 
 Spreadsheet is a non-visible component for storing and receiving data from
@@ -532,6 +699,9 @@ None
 
 {:id="TinyDB.ClearTag" class="method"} <i/> ClearTag(*tag*{:.text})
 : Clear the entry with the given `tag`{:.text.block}.
+
+{:id="TinyDB.GetEntries" class="method returns dictionary"} <i/> GetEntries()
+: Method to get all data in form of Dictionary
 
 {:id="TinyDB.GetTags" class="method returns any"} <i/> GetTags()
 : Return a list of all the tags in the data store.

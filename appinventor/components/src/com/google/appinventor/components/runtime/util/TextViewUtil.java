@@ -170,9 +170,11 @@ public class TextViewUtil {
       if (form instanceof ReplForm) {
         try {
           File file = new File(MediaUtil.fileUrlToFilePath(form.getAssetPath(fontFile)));
+          typeface = Typeface.createFromFile(file);
         } catch (IllegalArgumentException e) {
         } catch (Exception e) {}
-        typeface = Typeface.createFromFile(file);        
+        //typeface = Typeface.createFromFile(file);
+        typeface = Typeface.createFromAsset(form.$context().getAssets(), fontFile);
       } else {
         typeface = Typeface.createFromAsset(form.$context().getAssets(), fontFile);
       }

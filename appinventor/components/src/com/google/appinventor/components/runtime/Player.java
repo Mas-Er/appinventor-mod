@@ -361,7 +361,7 @@ public final class Player extends AndroidNonvisibleComponent
   @DesignerProperty(
       editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_FLOAT,
       defaultValue = "1.0")
-  @SimpleProperty
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR)
   public void PlaybackSpeed(float speed) {
     if(SdkLevel.getLevel() >= SdkLevel.LEVEL_MARSHMALLOW) {
       PlaybackParams playbackParams = player.getPlaybackParams();
@@ -380,7 +380,8 @@ public final class Player extends AndroidNonvisibleComponent
    *
    * @return the float value of the playback speed
    */
-  @SimpleProperty(description = "Sets the speed factor of the Player.")
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          description = "Sets the speed factor of the Player.")
   public float PlaybackSpeed()  {
     try {
       return player.getPlaybackParams().getSpeed();

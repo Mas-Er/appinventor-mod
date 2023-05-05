@@ -157,6 +157,9 @@ None
 {:id="CheckBox.Checked" .boolean} *Checked*
 : Set to `true`{:.logic.block} if the box is checked, `false`{:.logic.block} otherwise.
 
+{:id="CheckBox.CheckedColor" .color} *CheckedColor*
+: Returns `CheckBox` Checked state color.
+
 {:id="CheckBox.Enabled" .boolean} *Enabled*
 : Specifies whether the `CheckBox` should be active and clickable.
 
@@ -188,6 +191,9 @@ None
 {:id="CheckBox.TextColor" .color} *TextColor*
 : Specifies the text color of the `CheckBox` as an alpha-red-green-blue
  integer.
+
+{:id="CheckBox.UnCheckedColor" .color} *UnCheckedColor*
+: Returns `CheckBox` Un-Checked state color.
 
 {:id="CheckBox.Visible" .boolean} *Visible*
 : Specifies whether the `CheckBox` should be visible on the screen.  Value is `true`{:.logic.block}
@@ -437,6 +443,9 @@ Labels are components used to show text.
 : Specifies the label's background color as an alpha-red-green-blue
  integer.
 
+{:id="Label.Clickable" .boolean .wo} *Clickable*
+: Specifies whether the label should be clickable or not.
+
 {:id="Label.FontBold" .boolean .do} *FontBold*
 : Specifies whether the label's text should be bold.
  Some fonts do not support bold.
@@ -498,8 +507,12 @@ Labels are components used to show text.
 ### Events  {#Label-Events}
 
 {:.events}
-None
 
+{:id="Label.Click"} Click()
+: An event that occurs when an label is clicked.
+
+{:id="Label.LongClick"} LongClick()
+: An event that occurs when an label is long clicked.
 
 ### Methods  {#Label-Methods}
 
@@ -660,10 +673,10 @@ This is a visible component that displays a list of text and image elements in y
  display. Simple lists of strings may be set using the [`ElementsFromString`](#ListView.ElementsFromString) property.
  More complex lists of elements containing multiple strings and/or images can be created using the
  [`ListData`](#ListView.ListData) and [`ListViewLayout`](#ListView.ListViewLayout) properties.
-
+ <p>
  [Information on Layouts](../other/advanced-listview.html)
-
-   Warning: This component will not work correctly on Screens that are scrollable if its
+ <p>
+ Warning: This component will not work correctly on Screens that are scrollable if its
  [`Height`](#ListView.Height) is set to Fill Parent.
 
 
@@ -692,6 +705,9 @@ This is a visible component that displays a list of text and image elements in y
 {:id="ListView.FontTypefaceDetail" .text .do} *FontTypefaceDetail*
 : Specifies the label's text's font face as default, serif, sans
  serif, or monospace.
+
+{:id="ListView.HasSeparator" .boolean .do} *HasSeparator*
+: Returns whether the ListView has line separator or not.
 
 {:id="ListView.Height" .number .bo} *Height*
 : Specifies the `ListView`'s vertical height, measured in pixels.
@@ -735,6 +751,13 @@ This is a visible component that displays a list of text and image elements in y
  will be `0`. If an attempt is made to set this to a number less than `1` or greater than the
  number of items in the `ListView`, `SelectionIndex` will be set to `0`, and
  [`Selection`](#ListView.Selection) will be set to the empty text.
+
+{:id="ListView.SeparatorColor" .color .do} *SeparatorColor*
+: Returns the color of the ListView's line separator if ListView has line separator.
+
+{:id="ListView.SeparatorSize" .number .do} *SeparatorSize*
+: Sets the size of the ListView's line separator it would be a height of the line separator
+ in the case of vertical orientation and width of the line separator in the case of horizontal orientation.
 
 {:id="ListView.ShowFilterBar" .boolean} *ShowFilterBar*
 : Sets visibility of the filter bar. `true`{:.logic.block} will show the bar,
@@ -975,6 +998,14 @@ Users enter passwords in a password text box component, which hides the text tha
 
 {:.events}
 
+{:id="PasswordTextBox.AfterTextChanged"} AfterTextChanged()
+: The same as OnTextChanged, except now the text box is editable.
+ This event is used when you need to see and possibly edit new text.
+
+{:id="PasswordTextBox.BeforeTextChanged"} BeforeTextChanged(*oldText*{:.text},*start*{:.number},*count*{:.number},*after*{:.number})
+: This means that the characters are about to be replaced with some new text. The text is uneditable.
+ This event is used when you need to take a look at the old text which is about to change.
+
 {:id="PasswordTextBox.GotFocus"} GotFocus()
 : Event raised when the `PasswordTextBox` is selected for input, such as by
  the user touching it.
@@ -982,6 +1013,10 @@ Users enter passwords in a password text box component, which hides the text tha
 {:id="PasswordTextBox.LostFocus"} LostFocus()
 : Event raised when the `PasswordTextBox` is no longer selected for input, such
  as if the user touches a different text box.
+
+{:id="PasswordTextBox.OnTextChanged"} OnTextChanged(*newText*{:.text},*start*{:.number},*before*{:.number},*count*{:.number})
+: Changes have been made, some characters have just been replaced. The text is uneditable.
+ This event is used when you need to see which characters in the text are new.
 
 {:id="PasswordTextBox.TextChanged"} TextChanged()
 : Event raised when the text of the `PasswordTextBox` is changed.
@@ -1272,6 +1307,12 @@ This class is used to display a `Slider`.
 {:id="Slider.PositionChanged"} PositionChanged(*thumbPosition*{:.number})
 : Indicates that position of the slider thumb has changed.
 
+{:id="Slider.StartTracking"} StartTracking()
+: Event raised when the user has started a touch gesture on Slider.
+
+{:id="Slider.StopTracking"} StopTracking()
+: Event raised when the user has finished a touch gesture on Slider.
+
 ### Methods  {#Slider-Methods}
 
 {:.methods}
@@ -1299,6 +1340,9 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 {:id="Spinner.ElementsFromString" .text .wo} *ElementsFromString*
 : Set the list of choices from a string of comma-separated values.
+
+{:id="Spinner.Enabled" .boolean} *Enabled*
+: If set, user can tap `Spinner` to cause action.
 
 {:id="Spinner.Height" .number .bo} *Height*
 : Specifies the `Spinner`'s vertical height, measured in pixels.
@@ -1547,6 +1591,14 @@ Users enter text in a text box component.
 
 {:.events}
 
+{:id="TextBox.AfterTextChanged"} AfterTextChanged()
+: The same as OnTextChanged, except now the text box is editable.
+ This event is used when you need to see and possibly edit new text.
+
+{:id="TextBox.BeforeTextChanged"} BeforeTextChanged(*oldText*{:.text},*start*{:.number},*count*{:.number},*after*{:.number})
+: This means that the characters are about to be replaced with some new text. The text is uneditable.
+ This event is used when you need to take a look at the old text which is about to change.
+
 {:id="TextBox.GotFocus"} GotFocus()
 : Event raised when the `TextBox` is selected for input, such as by
  the user touching it.
@@ -1554,6 +1606,10 @@ Users enter text in a text box component.
 {:id="TextBox.LostFocus"} LostFocus()
 : Event raised when the `TextBox` is no longer selected for input, such
  as if the user touches a different text box.
+
+{:id="TextBox.OnTextChanged"} OnTextChanged(*newText*{:.text},*start*{:.number},*before*{:.number},*count*{:.number})
+: Changes have been made, some characters have just been replaced. The text is uneditable.
+ This event is used when you need to see which characters in the text are new.
 
 {:id="TextBox.TextChanged"} TextChanged()
 : Event raised when the text of the `TextBox` is changed.

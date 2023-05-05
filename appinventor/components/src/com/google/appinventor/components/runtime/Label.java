@@ -150,7 +150,8 @@ public final class Label extends AndroidViewComponent implements AccessibleCompo
 
   @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_BOOLEAN,
           defaultValue = "False")
-  @SimpleProperty(description = "Specifies whether the label should be clickable or not.")
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+          description = "Specifies whether the label should be clickable or not.")
   public void Clickable(boolean clickable) {
     this.isClickable = clickable;
     view.setClickable(this.isClickable);
