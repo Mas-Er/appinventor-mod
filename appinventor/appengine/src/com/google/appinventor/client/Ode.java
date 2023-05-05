@@ -2692,6 +2692,7 @@ public class Ode implements EntryPoint {
     if (top.proxy) {
       top.proxy.close();
     }
+  }-*/;
 
   public static native boolean isMobile() /*-{
     var check = false;

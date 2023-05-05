@@ -87,6 +87,11 @@ public final class YoungAndroidFontTypefaceChoicePropertyEditor extends Addition
       public void setSelectedIndex(int index) {
         fontAssetsList.setSelectedIndex(index);
       }
+
+      @Override
+      public void renameItem(int index, String value) {
+
+      }
     });
     
     choices.addItem("0", MESSAGES.defaultFontTypeface());
@@ -246,5 +251,10 @@ public final class YoungAndroidFontTypefaceChoicePropertyEditor extends Addition
       // Remove the asset from the list.
       choices.removeValue(assetName);
     }
+  }
+
+  @Override
+  public void onProjectNodeRenamed(Project project, ProjectNode node, String oldName) {
+
   }
 }

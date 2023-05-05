@@ -142,6 +142,11 @@ public class YoungAndroidDataColumnSelectorProperty
       public void setSelectedIndex(int index) {
         columnsList.setSelectedIndex(index);
       }
+
+      @Override
+      public void renameItem(int index, String value) {
+
+      }
     });
   }
 
